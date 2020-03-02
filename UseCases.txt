@@ -1,0 +1,20 @@
+Do you need efficiency?
+
+	For I/O devices: when you have devices with low specs, memory restrictions, bandwith limitations. 
+	
+	For small, efficient and quick comunications.
+	
+	If you need to stream data.
+
+	For microServices:
+		If you need a near real time response, witch is faster than a message queue.
+
+
+Cons:
+	.proto files contract need to be keep in sync between client and server
+
+Pro:
+	grpc is a standar, with facilitates calls between different programing languages
+
+
+https://docs.microsoft.com/en-us/aspnet/core/grpc/?view=aspnetcore-3.1

@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcService";
+
+service Customer {
+    rpc GetCustomerInfo(CustomerLookupModel) returns (CustomerModel); 
+    // retorna un set de CustomerModel o un stream de CustomerModel
+    rpc GetNewCustomers(NewCustomerRequest) returns (stream CustomerModel); 
+}
+
+// Workaround. Ya que en grpc no se puede tener un servicio que no tenga paramtros de entrada. 
+message NewCustomerRequest{
+}
+
+message CustomerLookupModel{
+    int32 userId = 1;
+
+}
+
+message CustomerModel{
+    string firstName = 1;
+    string lastName = 2;
+    string emailAdress = 3;
+    bool isAlive = 4;
+    int32 age = 5;
+}
